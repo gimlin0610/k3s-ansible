@@ -1,5 +1,5 @@
 # How Tos Raspi-5
-
+https://github.com/gimlin0610/k3s-ansible/blob/raspi5-hase10/raspi5_debian_13_howto.md
 ## Set predictable nic names
 sudo raspi-config
 -> advanced configuration
