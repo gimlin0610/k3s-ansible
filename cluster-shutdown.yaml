@@ -1,0 +1,15 @@
+---
+- name: Shutdown all Raspberry Pi cluster hosts
+  hosts: k3s_cluster
+  gather_facts: true
+  # become: yes  # Required to run the shutdown command
+  tasks:
+    - name: Ensure all systems are properly shut down
+      become: true
+      ansible.builtin.command: /sbin/shutdown now
+      # Alternatively, you could use 'systemd' module for Linux systems:
+      # ansible.builtin.systemd:
+      #   name: poweroff.target
+      #   state: stopped
+      # Note: 'shutdown now' is more universally available across Linux/Unix.
+      # listen: "System shutdown in progress"
